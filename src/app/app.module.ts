@@ -12,12 +12,13 @@ import { DetalleComponent } from '../pages/detalle/detalle.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListaDeseosService } from './services/lista-deseos.service';
-
+import {PendientePipe} from '../app/pipes/pendientes.pipe';
 
 @NgModule({
   declarations: [
     MyApp,
     PlaceholderPipe,
+    PendientePipe,
     PendientesComponent,
     TerminadasComponent,
     AgregarComponent,

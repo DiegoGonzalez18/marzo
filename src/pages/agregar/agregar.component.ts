@@ -11,7 +11,7 @@ import { ListaDeseosService } from '../../app/services/lista-deseos.service';
 })
 export class AgregarComponent implements OnInit {
     nombrelista: string='';
-    nombreItem: string;
+    nombreItem: string='';
     items: ListaItem[] = [];
     mostrar:boolean;
     constructor(
@@ -27,8 +27,14 @@ export class AgregarComponent implements OnInit {
 
     agregar(){
     if(this.nombreItem.length==0){
-        
-        return ;
+        const alert = this.alertCtrl.create({
+            title: 'Nombre del item !',
+            subTitle: 'El nombre del item es necesario!',
+            buttons: ['OK']
+          });
+          alert.present();
+          console.log("entro");
+          return;
     }
     let item = new ListaItem();
     item.nombre=this.nombreItem;
